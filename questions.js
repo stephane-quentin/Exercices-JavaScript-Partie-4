@@ -31,10 +31,10 @@ var IsString = function (texte) {
     return isNaN(texte);
 }
 var AfficherExtensionString = function (texte) {
-    return texte.slice(texte.lastIndexOf(".") +1);
-}
+    return texte.slice(texte.lastIndexOf(".") +1); // slice découpe à partir du premier indice jusqu'au deuxième, si un seul indice, coupe à partir de cet indice jusque la fin
+}                                                   // +1 car on aurait le . sinon, lastindexof rechercher la dernière occurence du caractère recherché
 var NombreEspaceString = function (texte) {
-    return texte.split(" ").length-1;
+    return texte.split(" ").length-1; // split permer de diviser une chaine de caractère à partir du séparateur désigné, avecc length, on a le nb de séparateurs mais on doit enlever 1 car la commande split renvoi toujours 1 meme si nul
 }
 var InverseString = function (texte) {
     return texte.split("").reverse().join(""); //transforme le string en array avec split puis l'inverse avec reverse, reverse ne fonctionnant qu'avec une array
@@ -52,11 +52,11 @@ var valeurAbsolue = function (nombre) {
 var valeurAbsolueArray = function (array) {
     return array.map(Math.abs); //map crée un nouveau tableau avec les résultats de l'ancien et la fonction entre parenthèse
 }
-var sufaceCercle = function (rayon) {
-    return Math.round((rayon*rayon)*Math.PI); //arrondi au chiffre entier supérieur
+var sufaceCercle = function (rayon) { //surface cercle ((rayon*rayon)*µ)
+    return Math.round((rayon*rayon)*Math.PI); //Math.round arrondi au chiffre entier supérieur
 }
-var hypothenuse = function (ab, ac) {
-    return Math.sqrt((ab*ab)+(ac*ac)); //racine carré
+var hypothenuse = function (ab, ac) { //hypothénuse, racine carrée de ((coté a * coté a) + (coté b * coté b))
+    return Math.sqrt((ab*ab)+(ac*ac)); //Math.sqrt racine carré
 }
 var calculIMC = function (poids, taille) {
     return Math.round((poids / (taille * taille))*100)/100; //j'aime pas, mais le tofixed ne fonctionne pas...
